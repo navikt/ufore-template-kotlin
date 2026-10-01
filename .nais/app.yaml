@@ -1,0 +1,37 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ name }}
+  namespace: ufore
+  labels:
+    team: ufore
+spec:
+  image: {{ image }}
+  # Hvis det trengs en ingress så må den lages så den er ulik for dev og prod
+  #  ingresses:
+  #    - https://{{ name }}.intern.dev.nav.no
+  port: 8080
+  ttl: 3h # Time before clean-up (1)
+  replicas:
+    max: 1
+    min: 1
+  resources:
+    requests:
+      cpu: 50m
+      memory: 32Mi
+
+
+  azure:
+    application:
+      enabled: true
+  liveness:
+    path: /isalive
+  readiness:
+    path: /isready
+  prometheus:
+    enabled: true
+    path: /metrics
+  kafka:
+    pool: {{ kafka.pool }}
+  secureLogs:
+    enabled: true

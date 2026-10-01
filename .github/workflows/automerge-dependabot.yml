@@ -1,0 +1,26 @@
+name: Automerge Dependabot PRs
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write        # Required to perform the merge commit
+      pull-requests: write   # Required to merge PRs (and approve if auto-approve is enabled)
+      checks: read           # Required to read check runs (update-branch-before-merge)
+      statuses: read         # Required to read commit statuses (update-branch-before-merge)
+    steps:
+      - uses: actions/create-github-app-token@v3.2.0
+        id: app-token
+        with:
+          client-id: ${{ vars.TEAM_UFORE_CLIENT_ID }}
+          private-key: ${{ secrets.TEAM_UFORE_PRIVATE_KEY }}
+      - name: Automerge Dependabot PRs
+        uses: navikt/automerge-dependabot@v1.6.0
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          minimum-age-of-pr: '3'
