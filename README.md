@@ -8,7 +8,7 @@ Beskrivelse av hva appen/tjenesten/tingen som lages i dette repositoryet gjør.
 - [Kotlin](https://kotlinlang.org/)
 - [Gradle](https://gradle.org/) brukes som byggeverktøy og er inkludert i oppsettet
 
-For hvilke versjoner som brukes, [se byggefilen](build.gradle.kts)
+For hvilke versjoner som brukes, [se byggefilen](/gradle/libs.versions.toml)
 
 ### Bygging og denslags
 For å bygge artifaktene:
