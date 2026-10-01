@@ -14,6 +14,8 @@ jobs:
       image: ${{ steps.docker-build-push.outputs.image }}
     steps:
       - uses: actions/checkout@v7 # Should be pinned (1)
+      - name: Build application jar
+        run: ./gradlew --no-daemon jar
       - name: Build and push image and SBOM to OCI registry
         uses: nais/docker-build-push@v0 # Should be pinned
         id: docker-build-push
