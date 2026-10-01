@@ -28,10 +28,13 @@ application {
 }
 
 tasks.jar {
-    archiveFileName.set("ufore-template-kotlin.jar")
     manifest {
-        attributes["Main-Class"] = application.mainClass.get()
+        attributes["Main-Class"] = "no.nav.uføre.AppKt"
     }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from(configurations.runtimeClasspath.map { cp ->
+        cp.map { if (it.isDirectory) it else zipTree(it) }
+    })
 }
 
 tasks.named<Test>("test") {
