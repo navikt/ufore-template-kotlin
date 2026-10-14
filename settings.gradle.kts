@@ -1,1 +1,1 @@
-rootProject.name = "ufore-template-kotlin"
+rootProject.name = "ufore-XXX"

@@ -4,10 +4,8 @@ Instructions for AI coding agents working in this repository.
 
 ## Project overview
 
-`ufore-template-kotlin` is a template repository for Team Uføre's Kotlin
-services at Nav. It is a minimal Kotlin/JVM application scaffold, meant to be
-used as a starting point for new repositories, not a finished product. Expect
-sparse functionality until adapted to a specific team's needs.
+`ufore-XXX` is a minimal Kotlin/JVM application scaffold for Team Uføre at Nav. 
+The purpose of this repository is...
 
 - Language/runtime: Kotlin, JDK 25 (via Gradle toolchain)
 - Build tool: Gradle (Kotlin DSL), wrapper included (`./gradlew`)
