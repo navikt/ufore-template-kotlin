@@ -10,6 +10,13 @@ Beskrivelse av hva appen/tjenesten/tingen som lages i dette repositoryet gjør.
 
 For hvilke versjoner som brukes, [se versjonsfilen](/gradle/libs.versions.toml)
 
+### Følgende steder må endres for å få repoet ditt til å fungere
+- søk etter `ufore-XXX` og erstatt med navnet på ditt repo 
+- på repoets side på GitHub → Settings → Secrets and variables → Actions
+  - ny variabel `TEAM_UFORE_CLIENT_ID`
+  - ny repository secret `TEAM_UFORE_PRIVATE_KEY`. Denne hentes fra NAIS-console → Secrets
+- legg til navnet på ditt repo til [Team Uføres](https://github.com/apps/team-ufore/installations/98878472) "repository access" på GitHub 
+
 ### Bygging og denslags
 For å bygge artifaktene:
 
