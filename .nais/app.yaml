@@ -34,5 +34,3 @@ spec:
   prometheus:
     enabled: true
     path: actuator/prometheus
-  secureLogs:
-    enabled: true
