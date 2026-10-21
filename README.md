@@ -20,6 +20,7 @@ repo_name=$(basename "$PWD") && grep -Irwl --null --exclude-dir=.git --exclude-d
   - ny repository **variabel** `TEAM_UFORE_CLIENT_ID`. Verdien hentes fra https://github.com/organizations/navikt/settings/apps/team-ufore
   - ny repository **secret** `TEAM_UFORE_PRIVATE_KEY`. Verdien hentes fra NAIS-console → Secrets → TEAM-UFORE
 - legg til navnet på ditt repo til [Team Uføres](https://github.com/apps/team-ufore/installations/98878472) "repository access" på GitHub
+- i `main.yaml` er det en rad som forhindrer deployment til `prod-gcp`. Fjern den raden når du er klar for deployment til prod
 - slett dette avsnittet fra README.md og oppdater med relevant beskrivelse av ditt nye repo
 
 ### Bygging og denslags

@@ -34,10 +34,16 @@ jobs:
       - uses: nais/setup@ea33c90b68228e6f04fb34b88bfd8ab6ad523ce8
         with:
           team: ufore
-      - name: Deploy to Nais
+      - name: Deploy to dev-gcp
         run: |
-          # Select the Nais environment. (2)
           nais apply .nais/app.yaml \
-            --environment <MY-ENV> \
+            --environment dev-gcp \
+            --set spec.image="${{ needs.build.outputs.image }}" \
+            --wait
+      - name: Deploy to prod-gcp
+        if: ${{ false }} # fjern denne raden når du vil deploye til prod-gcp
+        run: |
+          nais apply .nais/app.yaml \
+            --environment prod-gcp \
             --set spec.image="${{ needs.build.outputs.image }}" \
             --wait
