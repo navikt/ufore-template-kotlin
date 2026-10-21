@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'apply-alerts.yml'
+      - 'apply-alerts.yaml'
       - 'alerts/**'
 
 jobs:
