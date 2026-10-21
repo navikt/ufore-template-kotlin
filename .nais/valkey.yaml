@@ -1,2 +1,1 @@
-kafka:
-  pool: nav-dev
+# valkeys for common and dev go here

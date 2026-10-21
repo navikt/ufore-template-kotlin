@@ -1,2 +1,1 @@
-kafka:
-  pool: nav-prod
+# valkeys for prod go here

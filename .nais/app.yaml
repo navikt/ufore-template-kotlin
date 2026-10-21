@@ -34,7 +34,5 @@ spec:
   prometheus:
     enabled: true
     path: actuator/prometheus
-  kafka:
-    pool: {{ kafka.pool }}
   secureLogs:
     enabled: true
