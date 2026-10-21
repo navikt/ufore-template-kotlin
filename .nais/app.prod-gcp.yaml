@@ -1,0 +1,10 @@
+spec:
+  ingresses:
+    - https://my-app.production.ingress
+  replicas:
+    min: 2
+    max: 4
+  resources:
+    requests:
+      cpu: 40m
+      memory: 64Mi

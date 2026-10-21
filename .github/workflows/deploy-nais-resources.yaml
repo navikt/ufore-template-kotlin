@@ -1,0 +1,25 @@
+name: Deploy Nais resources
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".nais/**"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: nais/setup@ea33c90b68228e6f04fb34b88bfd8ab6ad523ce8
+        with:
+          team: ufore
+      - name: Apply to dev-gcp
+        run: |
+          nais apply .nais/app.yaml --environment dev-gcp --wait
+          nais apply .nais/valkey.yaml --environment dev-gcp --wait
+      - name: Apply to prod-gcp
+        run: |
+          nais apply .nais/app.yaml --environment prod-gcp --wait
+          nais apply .nais/valkey.yaml --environment prod-gcp --wait

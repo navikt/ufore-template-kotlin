@@ -1,36 +1,39 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ name }}
+  name: ufore-XXX
   namespace: ufore
   labels:
     team: ufore
 spec:
-  image: {{ image }}
-  # Hvis det trengs en ingress så må den lages så den er ulik for dev og prod
-  #  ingresses:
-  #    - https://{{ name }}.intern.dev.nav.no
-  port: 8080
-  ttl: 3h # Time before clean-up (1)
-  replicas:
-    max: 1
-    min: 1
-  resources:
-    requests:
-      cpu: 50m
-      memory: 32Mi
-
-
+  env:
+    - name: COMMON
+      value: value
   azure:
     application:
       enabled: true
   liveness:
-    path: /isalive
+    path: actuator/health/liveness
+    initialDelay: 30
   readiness:
-    path: /isready
+    path: actuator/health/readiness
+    initialDelay: 30
+  startup:
+    path: actuator/health/readiness
+    initialDelay: 30
+    failureThreshold: 30
+    periodSeconds: 5
+  observability:
+    autoInstrumentation:
+      enabled: true
+      runtime: java
+    logging:
+      destinations:
+        - id: elastic
+        - id: loki
   prometheus:
     enabled: true
-    path: /metrics
+    path: actuator/prometheus
   kafka:
     pool: {{ kafka.pool }}
   secureLogs:
