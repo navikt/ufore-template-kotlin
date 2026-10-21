@@ -37,3 +37,11 @@ Spørsmål knyttet til koden eller repositoryet kan stilles som issues her på G
 ### For Nav-ansatte
 
 Interne henvendelser kan sendes via Slack i kanalen #team-uføre.
+
+# TODO for å få denne malen til å bli fullt brukbar
+- [x] Auto-merge Dependabot PRs
+- [x] Pin actions til SHA
+- [ ] Følg anbefalt oppsett for NAIS: https://docs.nais.io/build/how-to/deploy-pipeline/
+- [ ] Deployment til dev-gcp og prod-gcp
+- [ ] Fiks alerts
+- [ ] Fjern dette avsnittet
