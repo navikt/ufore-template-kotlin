@@ -1,6 +1,6 @@
 spec:
-  ingresses:
-    - https://my-app.production.ingress
+  #ingresses:
+  #  - https://ufore-xxx-yyy.intern.nav.no
   replicas:
     min: 2
     max: 4
