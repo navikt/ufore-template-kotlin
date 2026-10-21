@@ -10,12 +10,17 @@ Beskrivelse av hva appen/tjenesten/tingen som lages i dette repositoryet gjør.
 
 For hvilke versjoner som brukes, [se versjonsfilen](/gradle/libs.versions.toml)
 
-### Følgende steder må endres for å få repoet ditt til å fungere
-- søk etter `ufore-XXX` og erstatt med navnet på ditt repo 
+### Følgende steg må gjennomføres for å få repoet ditt i kjørbar tilstand
+- søk etter teksten `ufore-XXX` og erstatt med navnet på ditt repo. Her er en kommando som gjør det for deg på macOS dersom du står i repoets rotkatalog
+```sh
+repo_name=$(basename "$PWD") && grep -Irwl --null --exclude-dir=.git --exclude-dir=build -e 'ufore-XXX' . | xargs -0 env REPO_NAME="$repo_name" perl -pi -e 's/\bufore-XXX\b/$ENV{REPO_NAME}/g'
+```
+- gi repoet et eierskap på https://console.nav.cloud.nais.io/team/ufore/repositories
 - på repoets side på GitHub → Settings → Secrets and variables → Actions
-  - ny variabel `TEAM_UFORE_CLIENT_ID`
-  - ny repository secret `TEAM_UFORE_PRIVATE_KEY`. Denne hentes fra NAIS-console → Secrets
-- legg til navnet på ditt repo til [Team Uføres](https://github.com/apps/team-ufore/installations/98878472) "repository access" på GitHub 
+  - ny repository **variabel** `TEAM_UFORE_CLIENT_ID`. Verdien hentes fra https://github.com/organizations/navikt/settings/apps/team-ufore
+  - ny repository **secret** `TEAM_UFORE_PRIVATE_KEY`. Verdien hentes fra NAIS-console → Secrets → TEAM-UFORE
+- legg til navnet på ditt repo til [Team Uføres](https://github.com/apps/team-ufore/installations/98878472) "repository access" på GitHub
+- slett dette avsnittet fra README.md og oppdater med relevant beskrivelse av ditt nye repo
 
 ### Bygging og denslags
 For å bygge artifaktene:
