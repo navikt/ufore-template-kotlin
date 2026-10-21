@@ -15,8 +15,8 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v7.0.1
-      - uses: nais/deploy/actions/deploy@v3
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: nais/deploy/actions/deploy@d003bddf74ce5b96fa3056ae60bd4b9b3bbc89ef
         env:
           CLUSTER: prod-gcp
           RESOURCE: alerts/alert-manager-config.yaml,alerts/alerts.yaml

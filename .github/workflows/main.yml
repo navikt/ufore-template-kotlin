@@ -13,11 +13,11 @@ jobs:
     outputs:
       image: ${{ steps.docker-build-push.outputs.image }}
     steps:
-      - uses: actions/checkout@v7 # Should be pinned (1)
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Build application jar
         run: ./gradlew --no-daemon jar
       - name: Build and push image and SBOM to OCI registry
-        uses: nais/docker-build-push@v0 # Should be pinned
+        uses: nais/docker-build-push@dd7421d5068057a020ca46ead966c26190c516b1
         id: docker-build-push
         with:
           team: ufore
@@ -30,8 +30,8 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v7 # Should be pinned
-      - uses: nais/setup@v1 # Should be pinned
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: nais/setup@ea33c90b68228e6f04fb34b88bfd8ab6ad523ce8
         with:
           team: ufore
       - name: Deploy to Nais

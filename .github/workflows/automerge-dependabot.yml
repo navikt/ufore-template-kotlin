@@ -14,13 +14,13 @@ jobs:
       checks: read           # Required to read check runs (update-branch-before-merge)
       statuses: read         # Required to read commit statuses (update-branch-before-merge)
     steps:
-      - uses: actions/create-github-app-token@v3.3.0
+      - uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510
         id: app-token
         with:
           client-id: ${{ vars.TEAM_UFORE_CLIENT_ID }}
           private-key: ${{ secrets.TEAM_UFORE_PRIVATE_KEY }}
       - name: Automerge Dependabot PRs
-        uses: navikt/automerge-dependabot@v1.6.0
+        uses: navikt/automerge-dependabot@09f5db3dd1413c6de20825c6b6c3e1cb682c92de
         with:
           token: ${{ steps.app-token.outputs.token }}
           minimum-age-of-pr: '3'
