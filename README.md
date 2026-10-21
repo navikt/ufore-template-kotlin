@@ -42,6 +42,7 @@ Interne henvendelser kan sendes via Slack i kanalen #team-uføre.
 - [x] Auto-merge Dependabot PRs
 - [x] Pin actions til SHA
 - [ ] Følg anbefalt oppsett for NAIS: https://docs.nais.io/build/how-to/deploy-pipeline/
+- [ ] Skal vi bygge artifaktet som en fet JAR, eller finnes det bedre måter?
 - [ ] Deployment til dev-gcp og prod-gcp
 - [ ] Fiks alerts
 - [ ] Fjern dette avsnittet
