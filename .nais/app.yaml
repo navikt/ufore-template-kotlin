@@ -1,7 +1,7 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: ufore-XXX
+  name: ufore-xxx-yyy
   namespace: ufore
   labels:
     team: ufore
