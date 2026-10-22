@@ -13,13 +13,13 @@ spec:
     application:
       enabled: true
   liveness:
-    path: actuator/health/liveness
+    path: /isalive
     initialDelay: 30
   readiness:
-    path: actuator/health/readiness
+    path: /isready
     initialDelay: 30
   startup:
-    path: actuator/health/readiness
+    path: /isready
     initialDelay: 30
     failureThreshold: 30
     periodSeconds: 5
