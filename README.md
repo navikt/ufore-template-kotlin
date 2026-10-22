@@ -19,6 +19,9 @@ repo_name=$(basename "$PWD") && grep -Irwl --null --exclude-dir=.git --exclude-d
 - på repoets side på GitHub → Settings → Secrets and variables → Actions
   - ny repository **variabel** `TEAM_UFORE_CLIENT_ID`. Verdien hentes fra https://github.com/organizations/navikt/settings/apps/team-ufore
   - ny repository **secret** `TEAM_UFORE_PRIVATE_KEY`. Verdien hentes fra NAIS-console → Secrets → TEAM-UFORE
+- for repoets side på GitHub → Settings → General → Pull reuest
+  - aktiver "Allow rebase merging" 
+  - aktiver "Allow auto-merge"  
 - legg til navnet på ditt repo til [Team Uføres](https://github.com/apps/team-ufore/installations/98878472) "repository access" på GitHub
 - i `main.yaml` er det en rad som forhindrer deployment til `prod-gcp`. Fjern den raden når du er klar for deployment til prod
 - slett dette avsnittet fra README.md og oppdater med relevant beskrivelse av ditt nye repo
@@ -41,9 +44,10 @@ Interne henvendelser kan sendes via Slack i kanalen #team-uføre.
 
 # TODO for å få denne malen til å bli fullt brukbar
 - [x] Auto-merge Dependabot PRs
+- [ ] Dependabot - automerge må forutsette grønt bygg
 - [x] Pin actions til SHA
 - [ ] Følg anbefalt oppsett for NAIS: https://docs.nais.io/build/how-to/deploy-pipeline/
 - [ ] Skal vi bygge artifaktet som en fet JAR, eller finnes det bedre måter?
-- [ ] Deployment til dev-gcp og prod-gcp
+- [x] Deployment til dev-gcp og prod-gcp
 - [ ] Fiks alerts
 - [ ] Fjern dette avsnittet
