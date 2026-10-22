@@ -1,9 +1,21 @@
 package no.nav.uføre
 
 import io.github.oshai.kotlinlogging.KotlinLogging
+import io.ktor.server.engine.embeddedServer
+import io.ktor.server.netty.Netty
+import io.ktor.server.response.respondText
+import io.ktor.server.routing.get
+import io.ktor.server.routing.routing
 
 fun main() {
     val log = KotlinLogging.logger {}
-    println("Hello World!")
-    log.info { "Hello Nav!" }
+    log.info { "Starter server" }
+    embeddedServer(Netty, port = 8000) {
+        routing {
+            get("/") {
+                call.respondText("Hello, world!")
+                log.info { "Hello Nav!" }
+            }
+        }
+    }.start(wait = true)
 }

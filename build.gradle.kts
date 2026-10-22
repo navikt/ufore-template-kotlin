@@ -14,6 +14,8 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     implementation(libs.kotlin.logging.jvm)
+    implementation(libs.ktor.server.core)
+    implementation(libs.ktor.server.netty)
     runtimeOnly(libs.logback.classic)
 }
 

@@ -44,10 +44,11 @@ Interne henvendelser kan sendes via Slack i kanalen #team-uføre.
 
 # TODO for å få denne malen til å bli fullt brukbar
 - [x] Auto-merge Dependabot PRs
-- [ ] Dependabot - automerge må forutsette grønt bygg
+- [x] Dependabot - automerge må forutsette grønt bygg
 - [x] Pin actions til SHA
-- [ ] Følg anbefalt oppsett for NAIS: https://docs.nais.io/build/how-to/deploy-pipeline/
+- [x] Følg anbefalt oppsett for NAIS: https://docs.nais.io/build/how-to/deploy-pipeline/
 - [ ] Skal vi bygge artifaktet som en fet JAR, eller finnes det bedre måter?
 - [x] Deployment til dev-gcp og prod-gcp
+- [x] Legg til en server for å unngå CrashLoopBackOff ved deploy
 - [ ] Fiks alerts
 - [ ] Fjern dette avsnittet
