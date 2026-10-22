@@ -19,7 +19,7 @@ repo_name=$(basename "$PWD") && grep -Irwl --null --exclude-dir=.git --exclude-d
 - på repoets side på GitHub → Settings → Secrets and variables → Actions
   - ny repository **variabel** `TEAM_UFORE_CLIENT_ID`. Verdien hentes fra https://github.com/organizations/navikt/settings/apps/team-ufore
   - ny repository **secret** `TEAM_UFORE_PRIVATE_KEY`. Verdien hentes fra NAIS-console → Secrets → TEAM-UFORE
-- for repoets side på GitHub → Settings → General → Pull reuest
+- for repoets side på GitHub → Settings → General → Pull request
   - aktiver "Allow rebase merging" 
   - aktiver "Allow auto-merge"  
 - legg til navnet på ditt repo til [Team Uføres](https://github.com/apps/team-ufore/installations/98878472) "repository access" på GitHub
