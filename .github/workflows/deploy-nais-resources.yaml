@@ -18,8 +18,10 @@ jobs:
       - name: Apply to dev-gcp
         run: |
           nais apply .nais/app.yaml --environment dev-gcp --wait
-          nais apply .nais/valkey.yaml --environment dev-gcp --wait
+          # enable if Valkey is used
+          # nais apply .nais/valkey.yaml --environment dev-gcp --wait
       - name: Apply to prod-gcp
         run: |
           nais apply .nais/app.yaml --environment prod-gcp --wait
-          nais apply .nais/valkey.yaml --environment prod-gcp --wait
+          # enable if Valkey is used
+          # nais apply .nais/valkey.yaml --environment prod-gcp --wait
