@@ -6,8 +6,6 @@ updates:
       interval: daily
     cooldown:
       default-days: 3
-    assignees:
-      - "@navikt/ufore"
 
   - package-ecosystem: gradle
     directory: "/"
@@ -15,5 +13,3 @@ updates:
       interval: daily
     cooldown:
       default-days: 3
-    assignees:
-      - "@navikt/ufore"
