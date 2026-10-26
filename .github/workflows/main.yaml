@@ -35,6 +35,7 @@ jobs:
         with:
           team: ufore
       - name: Deploy to dev-gcp
+        if: ${{ false }} # fjern denne raden når du vil deploye til dev-gcp
         run: |
           nais apply .nais/app.yaml \
             --environment dev-gcp \

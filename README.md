@@ -23,7 +23,7 @@ repo_name=$(basename "$PWD") && grep -Irwl --null --exclude-dir=.git --exclude-d
   - aktiver "Allow rebase merging" 
   - aktiver "Allow auto-merge"  
 - legg til navnet på ditt repo til [Team Uføres](https://github.com/apps/team-ufore/installations/98878472) "repository access" på GitHub
-- i `main.yaml` er det en rad som forhindrer deployment til `prod-gcp`. Fjern den raden når du er klar for deployment til prod
+- i `main.yaml` er det to rader som forhindrer deployment til `dev-gcp` og `prod-gcp`. Fjern disse radene når du er klar for deployment
 - slett dette avsnittet fra README.md og oppdater med relevant beskrivelse av ditt nye repo
 
 ### Bygging og denslags
