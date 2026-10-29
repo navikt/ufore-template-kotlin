@@ -16,6 +16,8 @@ dependencies {
     implementation(libs.kotlin.logging.jvm)
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.metrics.micrometer)
+    implementation(libs.micrometer.prometheus)
     runtimeOnly(libs.logback.classic)
     runtimeOnly(libs.logstash.logback)
 }

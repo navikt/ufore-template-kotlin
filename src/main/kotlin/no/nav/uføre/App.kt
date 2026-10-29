@@ -11,11 +11,8 @@ fun main() {
     val log = KotlinLogging.logger {}
     log.info { "Starter server" }
     embeddedServer(Netty, port = 8080) {
+        setupPrometheusMetrics()
         routing {
-            get("/") {
-                call.respondText("Hello, world!")
-                log.info { "Hello Nav!" }
-            }
             get("/isalive") {
                 call.respondText("ok")
             }
