@@ -7,9 +7,10 @@ import io.ktor.server.response.respondText
 import io.ktor.server.routing.get
 import io.ktor.server.routing.routing
 
+private val logger = KotlinLogging.logger {}
+
 fun main() {
-    val log = KotlinLogging.logger {}
-    log.info { "Starter server" }
+    logger.info { "Starter server" }
     embeddedServer(Netty, port = 8080) {
         setupPrometheusMetrics()
         routing {
