@@ -8,7 +8,7 @@ repositories {
     mavenCentral()
 }
 
-val ktorVersjon = "3.6.0"
+val ktorVersjon = "3.6.1"
 
 dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:6.1.3")
