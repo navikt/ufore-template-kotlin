@@ -15,7 +15,7 @@ dependencies {
     testImplementation("io.mockk:mockk:1.14.12")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
-    implementation("io.github.oshai:kotlin-logging-jvm:8.0.6")
+    implementation("io.github.oshai:kotlin-logging-jvm:8.0.7")
     implementation("io.ktor:ktor-server-core:${ktorVersjon}")
     implementation("io.ktor:ktor-server-netty:${ktorVersjon}")
     implementation("io.ktor:ktor-server-metrics-micrometer:$ktorVersjon")
