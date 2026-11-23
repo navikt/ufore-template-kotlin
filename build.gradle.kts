@@ -20,7 +20,7 @@ dependencies {
     implementation("io.ktor:ktor-server-netty:${ktorVersjon}")
     implementation("io.ktor:ktor-server-metrics-micrometer:$ktorVersjon")
     implementation("io.micrometer:micrometer-registry-prometheus:1.17.2")
-    runtimeOnly("ch.qos.logback:logback-classic:1.6.7")
+    runtimeOnly("ch.qos.logback:logback-classic:1.6.8")
     runtimeOnly("net.logstash.logback:logstash-logback-encoder:9.0")
 }
 
