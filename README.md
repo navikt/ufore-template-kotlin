@@ -8,7 +8,7 @@ Beskrivelse av hva appen/tjenesten/tingen som lages i dette repositoryet gjør.
 - [Kotlin](https://kotlinlang.org/)
 - [Gradle](https://gradle.org/) brukes som byggeverktøy og er inkludert i oppsettet
 
-For hvilke versjoner som brukes, [se versjonsfilen](/gradle/libs.versions.toml)
+For hvilke versjoner som brukes, [se byggefilen](/build.gradle.kts)
 
 ### Følgende steg må gjennomføres for å få repoet ditt i kjørbar tilstand
 - søk etter teksten `ufore-xxx-yyy` og erstatt med navnet på ditt repo. Her er en kommando som gjør det for deg på macOS dersom du står i repoets rotkatalog
